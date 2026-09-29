@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="ar" dir="rtl" manifest="cache.appcache">
+<html lang="en" dir="ltr" manifest="cache.appcache">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#050807">
   <meta name="description" content="Game Yard PS5 Relapse host for firmware 7.00 through 13.60.">
   <title>Game Yard | PS5 Relapse 7.00–13.60</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23050807'/%3E%3Cpath d='M14 16h36v8H22v16h12v-7h-7v-7h23v24H14z' fill='%2338f58a'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="./assets/gameyard-logo-v1.png">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <main class="shell">
     <header class="brandbar">
       <div class="brand" aria-label="Game Yard">
-        <span class="brand-mark" aria-hidden="true">GY</span>
+        <span class="brand-mark"><img src="./assets/gameyard-logo-v1.png" alt="Game Yard logo" width="256" height="256"></span>
         <span class="brand-copy">
           <strong>GAME YARD</strong>
           <small>PS5 RELAPSE HOST</small>
@@ -21,15 +21,15 @@
       </div>
       <div class="cache-pill" id="cache-pill" role="status" aria-live="polite">
         <span class="cache-dot" aria-hidden="true"></span>
-        <span id="cache-status">فحص الكاش</span>
+        <span id="cache-status">CHECKING CACHE</span>
       </div>
     </header>
 
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-copy">
         <p class="eyebrow">PS5 WEBKIT + RELAPSE</p>
-        <h1 id="page-title">جاهز للتشغيل</h1>
-        <p class="support">يدعم تحديثات <bdi>7.00</bdi> إلى <bdi>13.60</bdi></p>
+        <h1 id="page-title">READY TO LAUNCH</h1>
+        <p class="support">Supports firmware <bdi>7.00</bdi> through <bdi>13.60</bdi></p>
       </div>
       <div class="firmware-card">
         <span>FIRMWARE</span>
@@ -38,31 +38,31 @@
     </section>
 
     <figure class="promo-banner">
-      <img src="./assets/gameyard-ps5-banner-v1.jpg" alt="Game Yard PS5 يدعم تحديثات 7.00 إلى 13.60" width="1500" height="600">
+      <img src="./assets/gameyard-ps5-banner-v2.jpg" alt="Game Yard PS5 firmware 7.00 through 13.60" width="1500" height="600">
     </figure>
 
-    <section class="status-panel" aria-label="حالة التشغيل">
+    <section class="status-panel" aria-label="Launch status">
       <div class="status-head">
         <div>
-          <span class="status-label">الحالة الآن</span>
-          <h2 id="run-status">بانتظار التشغيل اليدوي</h2>
+          <span class="status-label">CURRENT STATUS</span>
+          <h2 id="run-status">WAITING FOR MANUAL START</h2>
         </div>
         <span class="live-indicator"><i aria-hidden="true"></i> LIVE</span>
       </div>
       <div id="console" class="console" role="log" aria-live="polite" aria-relevant="additions"></div>
-      <button id="start-exploit" class="start-button" type="button">تشغيل الاستغلال</button>
+      <button id="start-exploit" class="start-button" type="button">START EXPLOIT</button>
     </section>
 
-    <section class="quick-note" aria-label="تعليمات مختصرة">
+    <section class="quick-note" aria-label="Quick instructions">
       <div class="note-number">01</div>
-      <p>تأكد من رقم التحديث الظاهر، ثم اضغط زر التشغيل مرة واحدة واترك الصفحة مفتوحة حتى تظهر رسالة نجاح.</p>
+      <p>Confirm the detected firmware, press START EXPLOIT once, and keep this page open until success.</p>
       <div class="note-number">02</div>
-      <p>بعد تشغيل <bdi>ELF Loader</bdi> على المنفذ <bdi>9021</bdi>، اضغط <bdi>R2</bdi> لإرسال الحزم الاختيارية.</p>
+      <p>After <bdi>ELF Loader</bdi> starts on port <bdi>9021</bdi>, press <bdi>R2</bdi> to send optional payloads.</p>
     </section>
 
     <footer>
       <span>GAME YARD · 0944227117</span>
-      <span>للاستخدام على جهاز تملكه أو مصرح لك باختباره فقط</span>
+      <span>For use only on devices you own or are authorized to test</span>
     </footer>
   </main>
 

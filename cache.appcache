@@ -1,10 +1,11 @@
 CACHE MANIFEST
-# Game Yard PS5 Relapse cache v2026.09.29-3-banner
+# Game Yard PS5 Relapse cache v2026.09.29-4-english-brand
 
 CACHE:
 index.html
 style.css
-assets/gameyard-ps5-banner-v1.jpg
+assets/gameyard-logo-v1.png
+assets/gameyard-ps5-banner-v2.jpg
 LICENSE
 src/firmware.js
 src/gameyard-ui.js
