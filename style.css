@@ -53,6 +53,24 @@ footer {
   align-items: center;
 }
 
+.start-button {
+  display: block;
+  width: calc(100% - 48px);
+  margin: 0 24px 24px;
+  padding: 16px 24px;
+  border: 1px solid #38f58a;
+  border-radius: 12px;
+  background: #38f58a;
+  color: #031008;
+  font: 800 18px/1.2 inherit;
+  cursor: pointer;
+}
+
+.start-button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
 .brandbar {
   justify-content: space-between;
   direction: ltr;
