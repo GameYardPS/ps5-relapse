@@ -71,6 +71,23 @@ footer {
   cursor: not-allowed;
 }
 
+.promo-banner {
+  margin: 0 0 24px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 245, 138, .24);
+  border-radius: 18px;
+  background: #030706;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .28);
+}
+
+.promo-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 2;
+  object-fit: cover;
+}
+
 .brandbar {
   justify-content: space-between;
   direction: ltr;
