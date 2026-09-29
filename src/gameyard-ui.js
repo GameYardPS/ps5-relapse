@@ -20,34 +20,34 @@
   setFirmware();
 
   if (!window.applicationCache) {
-    setCache("التخزين غير مدعوم", "failed");
+    setCache("CACHE NOT SUPPORTED", "failed");
     return;
   }
 
   var appCache = window.applicationCache;
   appCache.addEventListener("checking", function () {
-    setCache("فحص الكاش");
+    setCache("CHECKING CACHE");
   });
   appCache.addEventListener("downloading", function () {
-    setCache("تنزيل الكاش");
+    setCache("DOWNLOADING CACHE");
   });
   appCache.addEventListener("progress", function (event) {
     if (event.total) {
       var percent = Math.round((event.loaded / event.total) * 100);
-      setCache("تجهيز الكاش " + percent + "%");
+      setCache("CACHING " + percent + "%");
     }
   });
   appCache.addEventListener("cached", function () {
-    setCache("الكاش جاهز", "ready");
+    setCache("CACHE READY", "ready");
   });
   appCache.addEventListener("noupdate", function () {
-    setCache("الكاش جاهز", "ready");
+    setCache("CACHE READY", "ready");
   });
   appCache.addEventListener("updateready", function () {
-    setCache("تحديث الكاش جاهز", "ready");
+    setCache("CACHE UPDATE READY", "ready");
     try { appCache.swapCache(); } catch (error) {}
   });
   appCache.addEventListener("error", function () {
-    setCache("فشل الكاش — اتصل بالإنترنت", "failed");
+    setCache("CACHE FAILED — CONNECT TO THE INTERNET", "failed");
   });
 }());

@@ -18,10 +18,10 @@ function writeLog(message, type = "log", replace = false) {
   line.className = `log-${type}`;
   const status = document.getElementById("run-status");
   if (status) {
-    if (type === "error") status.textContent = "حدث خطأ — أعد تحميل الصفحة";
-    else if (/elfldr is listening/i.test(message)) status.textContent = "تم التشغيل — ELF Loader جاهز على 9021";
-    else if (/kernel exploit complete/i.test(message)) status.textContent = "نجح استغلال النواة";
-    else if (/Starting WebKit exploit/i.test(message)) status.textContent = "جارٍ تشغيل WebKit";
+    if (type === "error") status.textContent = "ERROR — RELOAD THE PAGE";
+    else if (/elfldr is listening/i.test(message)) status.textContent = "SUCCESS — ELF LOADER READY ON 9021";
+    else if (/kernel exploit complete/i.test(message)) status.textContent = "KERNEL EXPLOIT COMPLETE";
+    else if (/Starting WebKit exploit/i.test(message)) status.textContent = "RUNNING WEBKIT EXPLOIT";
   }
   output.scrollTop = output.scrollHeight;
 }
@@ -85,7 +85,7 @@ function prepareManualLaunch() {
   }
 
   writeLog(`Firmware ${window.fw_str} detected — manual launch ready`, "info");
-  if (status) status.textContent = "جاهز — اضغط تشغيل الاستغلال";
+  if (status) status.textContent = "READY — PRESS START EXPLOIT";
 }
 
 if (startButton) {
@@ -93,10 +93,10 @@ if (startButton) {
     if (isRunning) return;
     isRunning = true;
     startButton.disabled = true;
-    startButton.textContent = "جارٍ التشغيل…";
+    startButton.textContent = "RUNNING…";
     run().catch((error) => {
       writeLog(error instanceof Error ? error.message : String(error), "error");
-      startButton.textContent = "فشل التشغيل — أعد تشغيل الجهاز";
+      startButton.textContent = "FAILED — RESTART THE CONSOLE";
     });
   }, { once: true });
 }
