@@ -2,6 +2,8 @@ import { establishPrimitive } from "./webkit.js";
 import { installWindowP } from "./utils/mem.js";
 
 const output = document.getElementById("console");
+const startButton = document.getElementById("start-exploit");
+let isRunning = false;
 
 function writeLog(message, type = "log", replace = false) {
   let line = replace ? output.lastElementChild : null;
@@ -70,4 +72,33 @@ async function run() {
   await main(primitive);
 }
 
-run().catch((error) => writeLog(error instanceof Error ? error.message : String(error), "error"));
+function prepareManualLaunch() {
+  const firmwareValue = document.getElementById("firmware-value");
+  const status = document.getElementById("run-status");
+  if (window.fw_str && firmwareValue) firmwareValue.textContent = window.fw_str;
+
+  const rejection = window.firmware.rejection();
+  if (rejection) {
+    if (startButton) startButton.disabled = true;
+    writeLog(rejection, "error");
+    return;
+  }
+
+  writeLog(`Firmware ${window.fw_str} detected — manual launch ready`, "info");
+  if (status) status.textContent = "جاهز — اضغط تشغيل الاستغلال";
+}
+
+if (startButton) {
+  startButton.addEventListener("click", () => {
+    if (isRunning) return;
+    isRunning = true;
+    startButton.disabled = true;
+    startButton.textContent = "جارٍ التشغيل…";
+    run().catch((error) => {
+      writeLog(error instanceof Error ? error.message : String(error), "error");
+      startButton.textContent = "فشل التشغيل — أعد تشغيل الجهاز";
+    });
+  }, { once: true });
+}
+
+prepareManualLaunch();
