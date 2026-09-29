@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050807">
+  <meta name="description" content="Game Yard PS5 Relapse safe manual host for firmware 7.00 through 13.60.">
+  <base href="../">
+  <title>Game Yard | PS5 Relapse Manual</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="brandbar">
+      <div class="brand" aria-label="Game Yard">
+        <span class="brand-mark" aria-hidden="true">GY</span>
+        <span class="brand-copy"><strong>GAME YARD</strong><small>PS5 RELAPSE · SAFE START</small></span>
+      </div>
+      <div class="cache-pill ready" role="status"><span class="cache-dot" aria-hidden="true"></span><span>تشغيل يدوي آمن</span></div>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">PS5 WEBKIT + RELAPSE</p>
+        <h1 id="page-title">تشغيل يدوي</h1>
+        <p class="support">يدعم تحديثات <bdi>7.00</bdi> إلى <bdi>13.60</bdi></p>
+      </div>
+      <div class="firmware-card"><span>FIRMWARE</span><strong id="firmware-value">AUTO</strong></div>
+    </section>
+
+    <section class="status-panel" aria-label="حالة التشغيل">
+      <div class="status-head">
+        <div><span class="status-label">الحالة الآن</span><h2 id="run-status">بانتظار التشغيل اليدوي</h2></div>
+        <span class="live-indicator"><i aria-hidden="true"></i> MANUAL</span>
+      </div>
+      <div id="console" class="console" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <button id="start-exploit" class="start-button" type="button">تشغيل الاستغلال</button>
+    </section>
+
+    <section class="quick-note" aria-label="تعليمات مختصرة">
+      <div class="note-number">01</div><p>تأكد من رقم التحديث الظاهر، ثم اضغط زر التشغيل مرة واحدة فقط.</p>
+      <div class="note-number">02</div><p>إذا انطفأ الجهاز فهذا فشل للاستغلال. شغّل الجهاز واترك فحص التخزين يكتمل قبل إعادة المحاولة.</p>
+    </section>
+    <footer><span>GAME YARD · 0944227117</span><span>للاستخدام على جهاز تملكه أو مصرح لك باختباره فقط</span></footer>
+  </main>
+
+  <script src="./src/firmware.js"></script>
+  <script src="./src/main.js"></script>
+  <script src="./src/rop.js"></script>
+  <script src="./src/utils/syscalls.js"></script>
+  <script type="module" src="./src/site.js"></script>
+</body>
+</html>
